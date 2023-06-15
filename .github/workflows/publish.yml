@@ -32,9 +32,9 @@ jobs:
           npm install
       - name: Less
         run: |
-          ./node_modules/less/bin/lessc assets/css/_base.less assets/css/_base.css
-          ./node_modules/clean-css-cli/bin/cleancss assets/css/_base.css -o assets/css/base.css -O1 -O2 "restructureRules:on"
-          rm assets/css/_base.css
+          ./node_modules/less/bin/lessc assets/css/_style.less assets/css/_style.css
+          ./node_modules/clean-css-cli/bin/cleancss assets/css/_style.css -o assets/css/style.css -O1 -O2 "restructureRules:on"
+          rm assets/css/_style.css
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
