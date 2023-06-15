@@ -1,0 +1,56 @@
+algolia:
+  application_id: "TN8HK9FU3W"
+  index_name: "xzonn_top"
+  files_to_exclude:
+    - index.html
+    - index.md
+    - pages/**/index.*
+  nodes_to_index: "p,h2,h3"
+  settings:
+    searchableAttributes:
+      - title
+      - headings
+      - unordered(tags)
+      - unordered(content)
+    attributesToHighlight:
+      - content
+      - headings
+      - tags
+      - title
+author: Xzonn
+defaults:
+  - values:
+      layout: "default"
+  - scope:
+      type: "posts"
+    values:
+      permalink: /:title.html
+exclude:
+  - Debug/
+  - node_modules/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+name: Xzonn的学习资料库
+title: Xzonn的学习资料库
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+timezone: Asia/Shanghai
+theme: 
+url: https://xzonn.top/study
+image_cdn: https://images.xzonn.top/github
+static_cdn: https://cdn.jsdelivr.net/gh/Xzonn/study@master
+global_static_cdn: https://cdn.jsdelivr.net/gh/Xzonn/xzonn.github.io@master
+image_cdn_debug: https://images.www.localhost/github
+static_cdn_debug: ""
+global_static_cdn_debug: https://blog.www.localhost
+readme_index:
+  remove_originals: true
+  with_frontmatter: true

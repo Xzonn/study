@@ -1,0 +1,18 @@
+        <!-- Common Heading Start -->
+        <div class="xz-heading jumbotron">
+            <div class="container">
+                <div class="xz-heading-text">{% if page.title %}
+                    <h1>{{ page.title }}</h1>{% endif %}{% if page.info %}
+                    <p class="xz-meta-info">{{ page.info }}</p>{% endif %}{% if page.date or page.tags.size > 0 %}
+                    <div class="xz-meta-infomation">{% if page.date %}
+                        <ul class="xz-meta-time">
+                            <li class="xz-meta-create">{{ page.date | date: "%Y-%m-%d" }}</li>
+                        </ul>{% endif %}{% if page.tags.size > 0 %}
+                        <ul class="xz-meta-tags">{% for tag in page.tags %}
+                            <li><a href="/posts.html#{{ tag }}">{{ tag }}</a></li>{% endfor %}
+                        </ul>{% endif %}
+                    </div>{% endif %}
+                </div>
+            </div>
+        </div>
+        <!-- Common Heading End -->
