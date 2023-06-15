@@ -44,6 +44,7 @@ plugins:
   - jekyll-sitemap
 timezone: Asia/Shanghai
 theme: 
+repository: Xzonn/study
 url: https://xzonn.top/study
 image_cdn: https://images.xzonn.top/github
 static_cdn: https://cdn.jsdelivr.net/gh/Xzonn/study@master
