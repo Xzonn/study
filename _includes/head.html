@@ -82,10 +82,10 @@
                 }
             })();
         </script>
-        <link rel="stylesheet" href="/assets/css/style.css" />
-        <script src="/assets/js/main.js"></script>{% assign css = page.css | split: " " %}{% for i in css %}
-        <link rel="stylesheet" href="/assets/css/{{ i }}.css"/>{% endfor %}{% assign js = page.js | split: " " %}{% for i in js %}
-        <script src="/assets/js/{{ i }}.js"></script>{% endfor %}
+        <link rel="stylesheet" href="{{ static_cdn }}/assets/css/style.css" />
+        <script src="{{ static_cdn }}/assets/js/main.js"></script>{% assign css = page.css | split: " " %}{% for i in css %}
+        <link rel="stylesheet" href="{{ static_cdn }}/assets/css/{{ i }}.css"/>{% endfor %}{% assign js = page.js | split: " " %}{% for i in js %}
+        <script src="{{ static_cdn }}/assets/js/{{ i }}.js"></script>{% endfor %}
         <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.name }}</title>
         <!-- Google -->
         <script data-ad-client="ca-pub-8317643192080236" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>{% unless jekyll.environment == "development" %}
