@@ -1,15 +1,22 @@
-$(function () {
-    $("jp").each(function () {
-        $(this).replaceWith($("<span/>").attr({
-            "lang": "ja"
-        }).html($(this).html()));
-    });
+"use strict";
+/* global $ */
 
-    $("blockquote").attr({
-        "lang": "ja"
-    });
+window.addEventListener("load", () => {
+  $("jp").each((n, element) => {
+    $(element).replaceWith(
+      $("<span/>")
+        .attr({
+          "lang": "ja",
+        })
+        .html($(element).html())
+    );
+  });
 
-    $("blockquote em").attr({
-        "lang": "zh"
-    });
+  $("blockquote").attr({
+    "lang": "ja",
+  });
+
+  $("blockquote em").attr({
+    "lang": "zh",
+  });
 });

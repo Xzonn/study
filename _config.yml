@@ -45,12 +45,12 @@ plugins:
 timezone: Asia/Shanghai
 theme: 
 repository: Xzonn/study
-url: https://xzonn.top/study
+url: https://xzonn.top
 image_cdn: https://images.xzonn.top/github
 static_cdn: https://cdn.jsdelivr.net/gh/Xzonn/study@master
 global_static_cdn: https://cdn.jsdelivr.net/gh/Xzonn/xzonn.github.io@master
 image_cdn_debug: https://images.www.localhost/github
-static_cdn_debug: ""
+static_cdn_debug: /study
 global_static_cdn_debug: https://blog.www.localhost
 readme_index:
   remove_originals: true

@@ -1,49 +1,30 @@
-        <!-- Common Content Start -->
-        <div class="xz-content container">
-            <div class="row">
-                <div class="xz-content-main col-md-{% if page.no_sidenav %}12{% else %}9{% endif %}">{% if page.head_image %}
-{% include figure.html blank="                    " src=page.head_image alt=page.title width=page.head_image_width height=page.head_image_height no_link=true %}{% endif %}
-                    <article>{% capture LINE_BREAK %}
+    <!-- Common Content Start -->
+    <div class="xz-content container">
+      <div class="row">
+        <div class="xz-content-main col-md-{% if page.no_sidenav %}12{% else %}9{% endif %}">{% if page.head_image %}
+{% include figure.html blank="          " src=page.head_image alt=page.title width=page.head_image_width height=page.head_image_height no_link=true %}{% endif %}
+          <article>{% capture LINE_BREAK %}
 {% endcapture %}{% capture DOUBLE_LINE_BREAK %}{{ LINE_BREAK }}{{ LINE_BREAK }}{% endcapture %}{% capture LINE_BREAK_INDENT %}
-                        {% endcapture %}{% assign _content = content | strip | replace: '<a href="http', '<a target="_blank" href="http' %}
-                        {% assign _splited_pres = _content | split: "<pre " %}{% for _pre in _splited_pres %}{% if forloop.first %}{{ _pre | replace: DOUBLE_LINE_BREAK, LINE_BREAK | replace: LINE_BREAK, LINE_BREAK_INDENT }}{% else %}<pre {% assign _splited_part = _pre | split: "</pre>" %}{{ _splited_part[0] }}</pre>{{ _splited_part[1] | replace: DOUBLE_LINE_BREAK, LINE_BREAK | replace: LINE_BREAK, LINE_BREAK_INDENT }}{% endif %}{% endfor %}
-                    </article>{% if page.sources or page.references or page.links or page.logs %}
-                    <div class="xz-infobox-bottom">{%if page.sources %}
-                        <div class="xz-info-sources">
-                            <div class="xz-info-sources-head">源地址</div>
-                            <ul>{% for source in page.sources %}
-                                <li><a lang="ja" href="{{ source[0] }}">{{ source[1] }}</a></li>{% endfor %}
-                            </ul>
-                        </div>{% endif %}{%if page.references %}
-                        <div class="xz-info-references">
-                            <div class="xz-info-references-head">参考资料</div>
-                            <ul>{% for reference in page.references %}
-                                <li><a href="{{ reference[0] }}">{{ reference[1] }}</a></li>{% endfor %}
-                            </ul>
-                        </div>{% endif %}{%if page.links %}
-                        <div class="xz-info-links">
-                            <div class="xz-info-links-head">相关链接</div>
-                            <ul>{% for link in page.links %}
-                                <li><a href="{{ link[0] }}">{{ link[1] }}</a></li>{% endfor %}
-                            </ul>
-                        </div>{% endif %}{%if page.logs %}
-                        <div class="xz-info-logs">
-                            <div class="xz-info-logs-head">更新历史</div>
-                            <ul>{% for log in page.logs %}
-                                <li>{{ log }}</li>{% endfor %}
-                            </ul>
-                        </div>{% endif %}
-                    </div>{% endif %}{% unless jekyll.environment == "development" or page.no_ad %}
-                    <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8317643192080236" data-ad-slot="8544171099"><script> (adsbygoogle = window.adsbygoogle || []).push({}); </script></ins>
-                    {% endunless %}{% unless jekyll.environment == "development" or page.no_comment %}
-                    <div class="xz-content-comment hidden-print">
-                        <div id="lv-container" data-id="city" data-uid="MTAyMC80MTk5MS8xODUzOA=="></div>
-                        <script src="https://cdn-city.livere.com/js/embed.dist.js" async="async"></script>
-                    </div>{% endunless %}
-                </div>{% unless page.no_sidenav %}
-                <div class="xz-sidenav col-md-3 hidden-print hidden-xs hidden-sm" role="complementary">
-                    {% include toc.html html=content h_max=4 class="xz-sidenav-list nav nav-stacked affix" submenu_class="nav nav-stacked" %}
-                </div>{% endunless %}
-            </div>
-        </div>
-        <!-- Common Content End -->
+            {% endcapture %}{% assign _content = content | strip | replace: '<a href="http', '<a target="_blank" href="http' %}
+            {% assign _splited_pres = _content | split: "<pre " %}{% for _pre in _splited_pres %}{% if forloop.first %}{{ _pre | replace: DOUBLE_LINE_BREAK, LINE_BREAK | replace: LINE_BREAK, LINE_BREAK_INDENT }}{% else %}<pre {% assign _splited_part = _pre | split: "</pre>" %}{{ _splited_part[0] }}</pre>{{ _splited_part[1] | replace: DOUBLE_LINE_BREAK, LINE_BREAK | replace: LINE_BREAK, LINE_BREAK_INDENT }}{% endif %}{% endfor %}
+          </article>{% if page.logs %}
+          <div class="xz-infobox-bottom">{%if page.logs %}
+            <div class="xz-info-logs">
+              <div class="xz-info-logs-head">更新历史</div>
+              <ul>{% for log in page.logs %}
+                <li>{{ log }}</li>{% endfor %}
+              </ul>
+            </div>{% endif %}
+          </div>{% endif %}{% unless jekyll.environment == "development" or page.no_ad %}
+          <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8317643192080236" data-ad-slot="8544171099"><script> (adsbygoogle = window.adsbygoogle || []).push({}); </script></ins>
+          {% endunless %}{% unless jekyll.environment == "development" or page.no_comment %}
+          <div class="xz-content-comment hidden-print">
+            <script src="https://giscus.app/client.js" data-repo="Xzonn/study" data-repo-id="R_kgDOJvuMow" data-category="General" data-category-id="DIC_kwDOJvuMo84CaZ08" data-mapping="specific" data-term="{{ page.title | default: site.name }}" data-strict="1" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" data-loading="lazy" crossorigin="anonymous" async></script>
+          </div>{% endunless %}
+        </div>{% unless page.no_sidenav %}
+        <div class="xz-sidenav col-md-3 hidden-print hidden-xs hidden-sm" role="complementary">
+          {% include toc.html html=content sanitize=true h_max=4 class="xz-sidenav-list nav nav-stacked affix" submenu_class="nav nav-stacked" %}
+        </div>{% endunless %}
+      </div>
+    </div>
+    <!-- Common Content End -->
